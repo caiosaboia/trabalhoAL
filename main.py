@@ -60,12 +60,18 @@ def gaussiana_pivoteamento(matriz):
         np.set_printoptions(suppress=True, precision=2)
         print(np.where(np.isclose(matriz, 0), 0, matriz))
 
-
     matriz[-1, :] /= matriz[-1, -2]
 
     print(f"Matriz após a {linhas}ª iteração:")
     np.set_printoptions(suppress=True, precision=2)
     print(np.where(np.isclose(matriz, 0), 0, matriz))
+
+    # Vetor solução
+    vetor_b = matriz[:, -1]
+    matriz_sistema = matriz[:, :-1]
+    solucao = np.linalg.solve(matriz_sistema, vetor_b)
+    print("Vetor solução:")
+    print(solucao)
 
 def LU_pivoteamento(matriz):
     n = matriz.shape[0]
