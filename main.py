@@ -135,6 +135,7 @@ def LU_pivoteamento(matriz):
     print("\nSolução de x:")
     print(x)
 
+
 def jacobi(A, max_iteracoes):
     b = A[:, -1]
     A = np.delete(A, -1, axis=1)
@@ -165,6 +166,7 @@ def jacobi(A, max_iteracoes):
         else:
             print("O valor é aproximado")
 
+        # Atualizar o vetor x
         x = x_new
 
         print(f"Iteração {itr + 1}:")
